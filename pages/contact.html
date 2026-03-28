@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма за контакт — Pazaruvai.info</title>
+    <meta name="description" content="Свържете се с екипа на Pazaruvai.info.">
+    <link rel="canonical" href="https://pazaruvai.info/pages/contact.html">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+    <main class="legal-page">
+        <div class="container">
+            <nav class="breadcrumb"><a href="../index.html">Начало</a><span class="sep">›</span><span>Контакт</span></nav>
+            <h1>Форма за контакт</h1>
+            <p style="margin-bottom:28px;color:var(--c-text-secondary)">Имате въпрос, забелязали сте грешка в цена или искате да ни изпратите предложение? Пишете ни!</p>
+
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/contact@pazaruvai.info" method="POST">
+                <input type="hidden" name="_subject" value="Ново съобщение от Pazaruvai.info">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://pazaruvai.info/pages/contact.html?sent=1">
+
+                <div class="form-group">
+                    <label for="name">Вашето име</label>
+                    <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                </div>
+                <div class="form-group">
+                    <label for="email">Имейл адрес</label>
+                    <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Тема</label>
+                    <input type="text" id="subject" name="subject" placeholder="Грешна цена / Предложение / Друго">
+                </div>
+                <div class="form-group">
+                    <label for="message">Съобщение</label>
+                    <textarea id="message" name="message" required placeholder="Опишете Вашето запитване тук..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">📧 Изпрати съобщение</button>
+            </form>
+
+            <div id="sentMessage" style="display:none;margin-top:24px;padding:20px;background:var(--c-primary-bg);border-radius:var(--radius-md);color:var(--c-primary);font-weight:600">
+                ✅ Съобщението беше изпратено успешно! Ще се свържем с Вас скоро.
+            </div>
+        </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="../js/config.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('sentMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

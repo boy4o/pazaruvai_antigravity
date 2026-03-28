@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pazaruvai.info/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=osnovni-hrani</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=hlyab-pechiva-i-testeni</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=mlechni-i-yaica</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=meso-i-riba</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=plodove-i-zelenchuci</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=konservi-soleni-kremove-i-sosove</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=zamrazeni-hrani</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=kafe-i-chai</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=bezalkoholni-napitki</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=sladkishi-i-deserti</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=snaks</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/category.html?cat=alkoholni-napitki</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pazaruvai.info/pages/terms.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pazaruvai.info/pages/privacy.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pazaruvai.info/pages/gdpr.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pazaruvai.info/pages/cookies.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pazaruvai.info/pages/disclaimer.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pazaruvai.info/pages/contact.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>

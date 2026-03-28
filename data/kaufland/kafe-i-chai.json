@@ -1,0 +1,110 @@
+[
+  {
+    "productId": "KAF001",
+    "productName": "Кафе капсули",
+    "description": "Nescafe Dolce Gusto, различни видове, 3 x 16 бр.",
+    "promoPrice": 13.29,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 1"
+  },
+  {
+    "productId": "KAF002",
+    "productName": "Инстантно кафе",
+    "description": "Exclusive, 200 г",
+    "promoPrice": 4.59,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 2026-08-09"
+  },
+  {
+    "productId": "KAF003",
+    "productName": "Разтворимо кафе",
+    "description": "NESCAFE, 3в1, 20 x 15,5 г",
+    "promoPrice": 2.96,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 15, 21"
+  },
+  {
+    "productId": "KAF004",
+    "productName": "Разтворимо кафе",
+    "description": "NESCAFE Gold, 190 + 20 г",
+    "promoPrice": 7.15,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 15, 21"
+  },
+  {
+    "productId": "KAF005",
+    "productName": "Мляно кафе",
+    "description": "EDUSCHO Family, 550 г",
+    "promoPrice": 7.66,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 15, 20"
+  },
+  {
+    "productId": "KAF006",
+    "productName": "Мляно кафе",
+    "description": "LAVAZZA Qualita Rossa, 3 x 250 г",
+    "promoPrice": 15.33,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 15, 20"
+  },
+  {
+    "productId": "KAF007",
+    "productName": "Разтворимо кафе",
+    "description": "JACOBS Cronat Gold, 200 г",
+    "promoPrice": 8.17,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 39, 56"
+  },
+  {
+    "productId": "KAF008",
+    "productName": "Разтворимо кафе",
+    "description": "NESCAFE Classic, метална кутия, 250 г",
+    "promoPrice": 7.15,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 39, 57"
+  },
+  {
+    "productId": "KAF009",
+    "productName": "Кафе на зърна",
+    "description": "LAVAZZA Suerte, 1 кг",
+    "promoPrice": 15.33,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 39, 56"
+  }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "productId": "SNA001",
+        "productName": "Пуканки",
+        "description": "3 х 100 г, Snack Day, със сол или с масло",
+        "promoPrice": 1.1,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA002",
+        "productName": "Микс Класик",
+        "description": "200 г, Alesto, сурови ядки и сушени плодове",
+        "promoPrice": 2.29,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA003",
+        "productName": "Пшенични пръчици XXL",
+        "description": "60 г, Слънчо, касис/класик",
+        "promoPrice": 0.28,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA004",
+        "productName": "Star Снакс",
+        "description": "90 г, Star, различни видове",
+        "promoPrice": 0.66,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA005",
+        "productName": "Бейк ролс",
+        "description": "80 г, 7 Days, с вкус на пица",
+        "promoPrice": 0.55,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA006",
+        "productName": "Крекери",
+        "description": "185 г, Hatherwood, морска сол, черен пипер, розмарин или чесън",
+        "promoPrice": 1.83,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA007",
+        "productName": "Картофени пръчици",
+        "description": "300 г, Batata Palha",
+        "promoPrice": 2.04,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "SNA008",
+        "productName": "Чипс",
+        "description": "200 г, Sol & Mar, със сол или пикантен",
+        "promoPrice": 1.78,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

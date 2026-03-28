@@ -1,0 +1,98 @@
+[
+    {
+        "productId": "ZAM001",
+        "productName": "Пица 4 сирена",
+        "description": "STELLINA MIA, 2 бр. х 340 г",
+        "promoPrice": 3.72,
+        "regularPrice": 7.44,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM002",
+        "productName": "Тесто за пица",
+        "description": "BELLA, замразено, 2 бр. х 400 г",
+        "promoPrice": 1.42,
+        "regularPrice": 2.84,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM003",
+        "productName": "Пилешки хапки",
+        "description": "CRETA FARMS, замразени, 2 бр. х 400 г",
+        "promoPrice": 3.3,
+        "regularPrice": 6.6,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM004",
+        "productName": "Дюнер кебап пилешки",
+        "description": "QUEBAP, замразен, 250 г",
+        "promoPrice": 3.59,
+        "regularPrice": 4.66,
+        "discountPercentage": 23,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM005",
+        "productName": "Говеждо шкембе",
+        "description": "UBOLDI, нарязано, замразено, 1 кг",
+        "promoPrice": 3.79,
+        "regularPrice": 5.05,
+        "discountPercentage": 25,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM006",
+        "productName": "Морски микс",
+        "description": "MICHIK, замразен, 350 г",
+        "promoPrice": 2.69,
+        "regularPrice": 3.79,
+        "discountPercentage": 29,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM007",
+        "productName": "Пикантни картофи",
+        "description": "МАГРЕ, по селски, замразени, 500 г",
+        "promoPrice": 1.69,
+        "regularPrice": 2.45,
+        "discountPercentage": 31,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "ZAM008",
+        "productName": "Замразени зеленчуци",
+        "description": "WORLD OF TASTE, всички видове",
+        "promoPrice": null,
+        "regularPrice": null,
+        "discountPercentage": 34,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

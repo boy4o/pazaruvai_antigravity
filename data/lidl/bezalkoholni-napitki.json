@@ -1,0 +1,110 @@
+[
+    {
+        "productId": "BEZ001",
+        "productName": "Pepsi или Mirinda",
+        "description": "2.5 л, Pepsi/Mirinda, газирана напитка",
+        "promoPrice": 1.17,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ002",
+        "productName": "XIXO Студен чай",
+        "description": "250 мл, XIXO, различни видове",
+        "promoPrice": 0.38,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ003",
+        "productName": "Siti Газирана напитка",
+        "description": "2.5 л, Siti, Кола или Цитронада",
+        "promoPrice": 0.45,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ004",
+        "productName": "Vidas Студен чай",
+        "description": "250 мл, Vidas, Лимон с мурсалски чай или Праскова с жълт кантарион",
+        "promoPrice": 0.92,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ005",
+        "productName": "Pepsi Zero",
+        "description": "2.5 л, Pepsi, газирана напитка без захар",
+        "promoPrice": 1.17,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ006",
+        "productName": "Сок от мандарини",
+        "description": "750 мл, охладен",
+        "promoPrice": 2.19,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ007",
+        "productName": "Боза със захар",
+        "description": "1 л, без консерванти",
+        "promoPrice": 0.69,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ008",
+        "productName": "Нектар Касис",
+        "description": "1 л, Solevita",
+        "promoPrice": 0.99,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "BEZ009",
+        "productName": "Алое Вера напитка",
+        "description": "1.5 л, Dellos, Натурална, Нар или Боровинка",
+        "promoPrice": 1.84,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "productId": "KAF001",
+        "productName": "Кафе на зърна Espresso Magnifico/Crema",
+        "description": "1 кг, Espresso Magnifico или Crema и Аroma",
+        "promoPrice": 10.49,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF002",
+        "productName": "Кафе на зърна Caffè Rosso",
+        "description": "1 кг, Poco",
+        "promoPrice": 10.79,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF003",
+        "productName": "Мляно кафе Lavazza Qualità Rossa",
+        "description": "3 х 250 г, Lavazza, пакет 2+1",
+        "promoPrice": 15.33,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF004",
+        "productName": "Кафе капсули Nescafé Dolce Gusto",
+        "description": "34 бр., Nescafe, различни видове",
+        "promoPrice": 8.68,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF005",
+        "productName": "Черен чай Hatherwood",
+        "description": "80 г, Hatherwood, Ърл Грей или Английска закуска, в метална кутия",
+        "promoPrice": 4.08,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

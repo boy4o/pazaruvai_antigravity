@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pazaruvai.info — Провери. Сравни. Пазарувай информирано.</title>
+    <meta name="description" content="Сравни цени на хранителни продукти и напитки от Lidl, Kaufland, Billa и Фантастико. Намери най-ниската цена и пазарувай информирано.">
+    <meta name="keywords" content="сравни цени, супермаркети, Lidl, Kaufland, Billa, Фантастико, хранителни продукти, напитки, оферти, България">
+    <link rel="canonical" href="https://pazaruvai.info/">
+    <meta property="og:title" content="Pazaruvai.info — Сравни цени от супермаркети">
+    <meta property="og:description" content="Провери цените от Lidl, Kaufland, Billa и Фантастико на едно място.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pazaruvai.info/">
+    <meta property="og:locale" content="bg_BG">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pazaruvai.info",
+        "url": "https://pazaruvai.info",
+        "description": "Сравни цени на хранителни продукти от супермаркети в България.",
+        "inLanguage": "bg",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pazaruvai.info/pages/search.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <div class="container">
+            <!-- Hero -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Провери. Сравни. Пазарувай информирано.</h1>
+                    <p>Сравняваме цените на хранителни продукти и напитки от Lidl, Kaufland, Billa и Фантастико — за да пазаруваш по-изгодно.</p>
+                    <div class="hero-stats">
+                        <div class="hero-stat"><span class="num">4</span><span class="label">Магазина</span></div>
+                        <div class="hero-stat"><span class="num">12</span><span class="label">Категории</span></div>
+                        <div class="hero-stat"><span class="num" id="heroTotal">…</span><span class="label">Продукта</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Deals -->
+            <section style="margin-top:32px">
+                <div class="section-header">
+                    <h2>🔥 Най-евтино тази седмица</h2>
+                    <span class="badge">ТОП ОФЕРТИ</span>
+                </div>
+                <div id="topDealsGrid" class="products-grid">
+                    <div class="loading-state"><div class="spinner"></div><p>Зареждане на оферти…</p></div>
+                </div>
+            </section>
+
+            <!-- Categories Grid -->
+            <section style="margin-top:48px">
+                <div class="section-header"><h2>📂 Разгледай по категории</h2></div>
+                <div class="categories-grid" id="categoriesGrid"></div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-section" id="statsSection">
+                <div class="section-header"><h2>📊 Обобщена статистика</h2></div>
+                <div class="stats-grid" id="statsGrid">
+                    <p style="color:var(--c-text-muted);font-size:.85rem">Зареждане на статистика…</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    function onPageReady() {
+        renderCategoriesGrid();
+        loadTopDeals();
+        loadStats();
+    }
+
+    function onCurrencyChange() { loadTopDeals(); }
+
+    function renderCategoriesGrid() {
+        const grid = document.getElementById('categoriesGrid');
+        grid.innerHTML = CATEGORIES.map(c => `
+            <a href="pages/category.html?cat=${c.id}" class="cat-card">
+                <span class="icon">${c.icon}</span>
+                <span class="name">${c.name}</span>
+            </a>
+        `).join('');
+    }
+
+    async function loadTopDeals() {
+        const grid = document.getElementById('topDealsGrid');
+        try {
+            const deals = await fetchTopDeals();
+            if (!deals.length) {
+                grid.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>Няма налични оферти в момента.</p></div>';
+                return;
+            }
+            const groups = groupProducts(deals);
+            const sorted = sortGroups(groups, 'discount_desc');
+            renderProductsGrid(grid, sorted.slice(0, 8), currentCurrency, 'grid');
+        } catch (e) {
+            grid.innerHTML = '<div class="empty-state"><p>Грешка при зареждане.</p></div>';
+        }
+    }
+
+    async function loadStats() {
+        const grid = document.getElementById('statsGrid');
+        const heroEl = document.getElementById('heroTotal');
+        try {
+            const stats = await countAllProducts();
+            heroEl.textContent = stats.total;
+
+            const catRows = CATEGORIES.map(c => `
+                <div class="stats-row">
+                    <span class="s-label">${c.icon} ${c.name}</span>
+                    <span class="s-value">${stats.byCat[c.id] || 0}</span>
+                </div>`).join('');
+
+            const storeRows = STORE_IDS.map(s => `
+                <div class="stats-row">
+                    <span class="s-label">${STORES[s].icon} ${STORES[s].name}</span>
+                    <span class="s-value">${stats.byStore[s] || 0}</span>
+                </div>`).join('');
+
+            grid.innerHTML = `
+                <div class="stats-block">
+                    <h3>Продукти по категории</h3>
+                    ${catRows}
+                </div>
+                <div class="stats-block">
+                    <h3>Продукти по магазини</h3>
+                    ${storeRows}
+                    <div class="stats-row" style="margin-top:12px;border-top:2px solid var(--c-primary-bg);padding-top:12px">
+                        <span class="s-label" style="font-weight:700">Общо</span>
+                        <span class="s-value" style="color:var(--c-primary);font-size:1.1rem">${stats.total}</span>
+                    </div>
+                </div>`;
+        } catch (e) {
+            grid.innerHTML = '<p style="color:var(--c-text-muted)">Статистиката не е налична.</p>';
+        }
+    }
+    </script>
+</body>
+</html>

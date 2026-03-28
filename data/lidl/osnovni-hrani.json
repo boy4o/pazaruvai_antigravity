@@ -1,0 +1,38 @@
+[
+    {
+        "productId": "OSN001",
+        "productName": "Био овесени ядки",
+        "description": "500 гр, Crownfield, Фини",
+        "promoPrice": 0.89,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN002",
+        "productName": "Леща Белуга",
+        "description": "500 гр, Deluxe",
+        "promoPrice": 2.3,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": "неналичен"
+    },
+    {
+        "productId": "OSN003",
+        "productName": "Маслиново масло с подправки",
+        "description": "250 мл, Deluxe, различни аромати (екстра върджин)",
+        "promoPrice": 3.99,
+        "regularPrice": null,
+        "discountPercentage": 0,
+        "validFrom": "09.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

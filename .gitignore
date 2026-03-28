@@ -1,0 +1,17 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Scripts (not needed in production)
+scripts/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Old files
+data/fruits_lidl.json
+data/meta.json

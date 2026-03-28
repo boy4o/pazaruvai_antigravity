@@ -1,0 +1,110 @@
+[
+  {
+    "productId": "SNK001",
+    "productName": "Снакс",
+    "description": "K-Classic, с вкус на фъстъци, 150 г",
+    "promoPrice": 0.91,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 8"
+  },
+  {
+    "productId": "SNK002",
+    "productName": "Орехи",
+    "description": "Ядки, 200 г",
+    "promoPrice": 3.06,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 9"
+  },
+  {
+    "productId": "SNK003",
+    "productName": "Пшенични пръчици",
+    "description": "СЛЪНЧО, XXL, 60 г",
+    "promoPrice": 0.28,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 13"
+  },
+  {
+    "productId": "SNK004",
+    "productName": "Брускети",
+    "description": "МАРЕТИ, различни видове, 3 x 70 г (210 г)",
+    "promoPrice": 1.63,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 13"
+  },
+  {
+    "productId": "SNK005",
+    "productName": "Солети",
+    "description": "БРЕЙ!, промопакет 2+1 безплатно, 3 x 200 г",
+    "promoPrice": 1.22,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 26, 35"
+  },
+  {
+    "productId": "SNK006",
+    "productName": "Тиквени семки",
+    "description": "БРЕЙ!, печени, белени, 100 г",
+    "promoPrice": 0.91,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 26, 35"
+  },
+  {
+    "productId": "SNK007",
+    "productName": "Чипс",
+    "description": "Chio, различни вкусове, 1+1 безплатно, 2 x 240 г",
+    "promoPrice": 3.06,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 41, 56"
+  },
+  {
+    "productId": "SNK008",
+    "productName": "Картофен чипс",
+    "description": "Ruffles, различни вкусове, 140 г",
+    "promoPrice": 1.15,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 41, 57"
+  },
+  {
+    "productId": "SNK009",
+    "productName": "Снакс",
+    "description": "Star, различни вкусове, 80 г",
+    "promoPrice": 0.61,
+    "regularPrice": null,
+    "discountPercentage": null,
+    "validFrom": "09.03.2026",
+    "validTo": "15.03.2026",
+    "loyaltyCard": false,
+    "notes": "Страница: 41, 57"
+  }
+]

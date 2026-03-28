@@ -1,0 +1,50 @@
+[
+  {
+    "productId": "ZAM001",
+    "productName": "Пица Маргарита",
+    "description": "Clever, 3 x 300 г",
+    "promoPrice": 3.83,
+    "regularPrice": 3.83,
+    "discountPercentage": 0,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "ZAM002",
+    "productName": "Картофи замразени (French Fries)",
+    "description": "BILLA, 1 кг",
+    "promoPrice": 1.99,
+    "regularPrice": 2.52,
+    "discountPercentage": 21,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "ZAM003",
+    "productName": "Аржентински хек",
+    "description": "За 1 кг",
+    "promoPrice": 2.99,
+    "regularPrice": 4.9,
+    "discountPercentage": 39,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "ZAM004",
+    "productName": "Замразени плодове (всички видове)",
+    "description": "BILLA",
+    "promoPrice": null,
+    "regularPrice": null,
+    "discountPercentage": 25,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": true,
+    "notes": "Промоцията изисква BILLA Card."
+  }
+]

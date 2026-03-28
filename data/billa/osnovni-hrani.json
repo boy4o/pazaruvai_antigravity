@@ -1,0 +1,74 @@
+[
+  {
+    "productId": "OSN001",
+    "productName": "Слънчогледово олио",
+    "description": "Бисер, 1 л",
+    "promoPrice": 1.42,
+    "regularPrice": 2.03,
+    "discountPercentage": 30,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": true,
+    "notes": "Промоцията изисква BILLA Card."
+  },
+  {
+    "productId": "OSN002",
+    "productName": "Български ориз",
+    "description": "Кръстев, 1 кг",
+    "promoPrice": 1.3,
+    "regularPrice": 2.36,
+    "discountPercentage": 45,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "OSN003",
+    "productName": "Маслиново масло Extra Virgin",
+    "description": "Bertolli, 1 л",
+    "promoPrice": 9.99,
+    "regularPrice": 15.14,
+    "discountPercentage": 34,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "OSN004",
+    "productName": "Захар",
+    "description": "IZZI, 1 кг",
+    "promoPrice": 0.59,
+    "regularPrice": 1.02,
+    "discountPercentage": 42,
+    "validFrom": "16.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "OSN005",
+    "productName": "Бяло брашно тип 650",
+    "description": "CLEVER, 1 кг",
+    "promoPrice": 0.46,
+    "regularPrice": 0.61,
+    "discountPercentage": 24,
+    "validFrom": "16.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "OSN006",
+    "productName": "Суха мая",
+    "description": "Clever, 6х7 г",
+    "promoPrice": 0.01,
+    "regularPrice": 0.01,
+    "discountPercentage": 0,
+    "validFrom": "01.03.2026",
+    "validTo": "31.03.2026",
+    "loyaltyCard": false,
+    "notes": "трябва да се пише при какви условия"
+  }
+]

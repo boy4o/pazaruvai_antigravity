@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Категория — Pazaruvai.info</title>
+    <meta name="description" id="pageMeta" content="Сравни цени на продукти от Lidl, Kaufland, Billa и Фантастико.">
+    <link rel="canonical" id="pageCanonical" href="https://pazaruvai.info/pages/category.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="bg_BG">
+    <script type="application/ld+json" id="schemaLD">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Категория",
+        "url": "https://pazaruvai.info/pages/category.html",
+        "isPartOf": { "@type": "WebSite", "name": "Pazaruvai.info", "url": "https://pazaruvai.info" }
+    }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="breadcrumb">
+                <a href="../index.html">Начало</a>
+                <span class="sep">›</span>
+                <span id="breadcrumbCat">Категория</span>
+            </nav>
+
+            <!-- Category Title -->
+            <div class="section-header" style="margin-bottom:8px">
+                <h1 id="catTitle" style="font-size:1.8rem">Зареждане...</h1>
+            </div>
+            <p id="catDesc" style="color:var(--c-text-secondary);margin-bottom:20px;font-size:.9rem"></p>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <span class="count-label">Показани:</span>
+                    <span class="count-num" id="productCount">0</span>
+                </div>
+                <div class="toolbar-right">
+                    <!-- Store Filter -->
+                    <select id="storeFilter" aria-label="Филтър по магазин">
+                        <option value="all">Всички магазини</option>
+                        <option value="lidl">Lidl</option>
+                        <option value="kaufland">Kaufland</option>
+                        <option value="billa">Billa</option>
+                        <option value="fantastico">Фантастико</option>
+                    </select>
+                    <!-- Sort -->
+                    <select id="sortSelect" aria-label="Сортиране">
+                        <option value="price_asc">Цена ↑ (най-ниска)</option>
+                        <option value="price_desc">Цена ↓ (най-висока)</option>
+                        <option value="discount_desc">Отстъпка % ↓</option>
+                        <option value="name_asc">Име А-Я</option>
+                    </select>
+                    <!-- View Toggle -->
+                    <div class="view-toggle">
+                        <button id="btnGrid" class="active" aria-label="Плочки">▦ Плочки</button>
+                        <button id="btnList" aria-label="Редове">☰ Редове</button>
+                    </div>
+                    <!-- Currency -->
+                    <button class="btn-currency" id="catCurrencyToggle">
+                        Валута: <span class="curr-val" id="catCurrDisplay">EUR</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products -->
+            <div id="productsContainer" class="products-grid">
+                <div class="loading-state"><div class="spinner"></div><p>Зареждане на продукти...</p></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+    let allGroups = [];
+    let catId = '';
+    let pageCurrency = 'EUR';
+    let pageView = 'grid';
+
+    function onPageReady() {
+        const params = new URLSearchParams(window.location.search);
+        catId = params.get('cat') || 'staples';
+        const cat = getCategoryById(catId);
+        if (!cat) { window.location.href = '../index.html'; return; }
+
+        // Update page meta
+        document.getElementById('pageTitle').textContent = `${cat.name} — Сравни цени | Pazaruvai.info`;
+        document.getElementById('pageMeta').content = cat.meta || cat.desc;
+        document.getElementById('pageCanonical').href = `https://pazaruvai.info/pages/category.html?cat=${catId}`;
+        document.getElementById('breadcrumbCat').textContent = cat.name;
+        document.getElementById('catTitle').textContent = `${cat.icon} ${cat.name}`;
+        document.getElementById('catDesc').textContent = cat.desc;
+        document.title = `${cat.name} — Сравни цени | Pazaruvai.info`;
+
+        // Schema
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": cat.name,
+            "description": cat.desc,
+            "url": `https://pazaruvai.info/pages/category.html?cat=${catId}`,
+            "isPartOf": { "@type": "WebSite", "name": "Pazaruvai.info", "url": "https://pazaruvai.info" }
+        };
+        document.getElementById('schemaLD').textContent = JSON.stringify(schema);
+
+        setupCategoryControls();
+        loadCategoryData();
+    }
+
+    function setupCategoryControls() {
+        document.getElementById('storeFilter').addEventListener('change', applyFilters);
+        document.getElementById('sortSelect').addEventListener('change', applyFilters);
+
+        const btnGrid = document.getElementById('btnGrid');
+        const btnList = document.getElementById('btnList');
+        btnGrid.addEventListener('click', () => { pageView = 'grid'; btnGrid.classList.add('active'); btnList.classList.remove('active'); applyFilters(); });
+        btnList.addEventListener('click', () => { pageView = 'list'; btnList.classList.add('active'); btnGrid.classList.remove('active'); applyFilters(); });
+
+        document.getElementById('catCurrencyToggle').addEventListener('click', () => {
+            pageCurrency = pageCurrency === 'EUR' ? 'BGN' : 'EUR';
+            document.getElementById('catCurrDisplay').textContent = pageCurrency;
+            currentCurrency = pageCurrency;
+            document.getElementById('currDisplay').textContent = pageCurrency;
+            applyFilters();
+        });
+    }
+
+    async function loadCategoryData() {
+        const container = document.getElementById('productsContainer');
+        showLoading(container);
+        const products = await fetchCategoryProducts(catId);
+        allGroups = groupProducts(products);
+        applyFilters();
+    }
+
+    function applyFilters() {
+        const store = document.getElementById('storeFilter').value;
+        const sort = document.getElementById('sortSelect').value;
+        let filtered = filterGroups(allGroups, { store });
+        filtered = sortGroups(filtered, sort);
+        document.getElementById('productCount').textContent = filtered.length;
+        const container = document.getElementById('productsContainer');
+        renderProductsGrid(container, filtered, pageCurrency, pageView);
+    }
+
+    function onCurrencyChange(curr) {
+        pageCurrency = curr;
+        document.getElementById('catCurrDisplay').textContent = curr;
+        applyFilters();
+    }
+    </script>
+</body>
+</html>

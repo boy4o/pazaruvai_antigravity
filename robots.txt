@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pazaruvai.info/sitemap.xml

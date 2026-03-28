@@ -1,0 +1,86 @@
+[
+  {
+    "productId": "SNK001",
+    "productName": "Чипс",
+    "description": "Chio, различни видове, 240 г",
+    "promoPrice": 1.99,
+    "regularPrice": 3.02,
+    "discountPercentage": 34,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK002",
+    "productName": "Печени белени фъстъци",
+    "description": "Detelina's, 350 г",
+    "promoPrice": 1.89,
+    "regularPrice": 2.42,
+    "discountPercentage": 22,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK003",
+    "productName": "Пекан",
+    "description": "Nice Bites, 125 г",
+    "promoPrice": 2.49,
+    "regularPrice": 3.36,
+    "discountPercentage": 26,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK004",
+    "productName": "Крекери (смес от 6 семена)",
+    "description": "Hogarenas, 189 г",
+    "promoPrice": 1.12,
+    "regularPrice": 1.4,
+    "discountPercentage": 20,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK005",
+    "productName": "Оризов чипс",
+    "description": "Rice Up!, 60 г",
+    "promoPrice": 0.71,
+    "regularPrice": 1.01,
+    "discountPercentage": 30,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK006",
+    "productName": "Пуканки с масло",
+    "description": "Chio, 80 г",
+    "promoPrice": 0.52,
+    "regularPrice": 1.04,
+    "discountPercentage": 50,
+    "validFrom": "12.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  },
+  {
+    "productId": "SNK007",
+    "productName": "Брускети",
+    "description": "Maretti, 70 г",
+    "promoPrice": 0.5,
+    "regularPrice": 0.81,
+    "discountPercentage": 38,
+    "validFrom": "16.03.2026",
+    "validTo": "18.03.2026",
+    "loyaltyCard": false,
+    "notes": ""
+  }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "productId": "KAF001",
+        "productName": "Мляно кафе Aroma Italiano",
+        "description": "KIMBO, вакуум, 250 г",
+        "promoPrice": 3.55,
+        "regularPrice": 7.1,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF002",
+        "productName": "Мляно кафе EXCELLENT",
+        "description": "MELITTA, Classic/Espresso, 250 г",
+        "promoPrice": 3.83,
+        "regularPrice": 7.66,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF003",
+        "productName": "Разтворимо кафе Cronat Gold",
+        "description": "JACOBS, 2 бр. х 200 г",
+        "promoPrice": 12.52,
+        "regularPrice": 25.04,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF004",
+        "productName": "Чай Ginger+",
+        "description": "GT, различни видове, 2 оп. х 20 бр.",
+        "promoPrice": 3.06,
+        "regularPrice": 6.12,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": "Промоция: 1+1"
+    },
+    {
+        "productId": "KAF005",
+        "productName": "Мляно кафе Gold Selection",
+        "description": "TCHIBO, 2 бр. х 250 г",
+        "promoPrice": 7.9,
+        "regularPrice": 15.8,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": "Промоция: 1+1"
+    },
+    {
+        "productId": "KAF006",
+        "productName": "Кафе на зърна Granaroma",
+        "description": "VERGNANO, 1 кг",
+        "promoPrice": 19.39,
+        "regularPrice": 38.78,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF007",
+        "productName": "Кафе на зърна Monarch",
+        "description": "JACOBS, 1 кг",
+        "promoPrice": 17.89,
+        "regularPrice": 27.52,
+        "discountPercentage": 35,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF008",
+        "productName": "Разтворимо кафе 3в1",
+        "description": "JACOBS, 10 бр. х 15.1 г",
+        "promoPrice": 1.69,
+        "regularPrice": 2.82,
+        "discountPercentage": 40,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF009",
+        "productName": "Инстантно кафе 3в1 / 2в1",
+        "description": "JACOBS, стик, 11.1-15.1 г / 12.4 г",
+        "promoPrice": 0.18,
+        "regularPrice": 0.29,
+        "discountPercentage": 37,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "KAF010",
+        "productName": "Кафе капсули Dolce Gusto",
+        "description": "NESCAFE, различни видове, 30 бр.",
+        "promoPrice": 8.69,
+        "regularPrice": 11.29,
+        "discountPercentage": 23,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]

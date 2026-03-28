@@ -1,0 +1,98 @@
+[
+    {
+        "productId": "OSN001",
+        "productName": "Брашно ТИП 450",
+        "description": "МЕЛКО, 2 бр. х 1 кг",
+        "promoPrice": 1.16,
+        "regularPrice": 2.32,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN002",
+        "productName": "Леща Традиционна",
+        "description": "PANINO, 2 бр. х 500 г",
+        "promoPrice": 1.42,
+        "regularPrice": 2.84,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN003",
+        "productName": "Кафява захар",
+        "description": "DARK DEMERARA, 2 бр. х 500 г",
+        "promoPrice": 2.04,
+        "regularPrice": 4.08,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN004",
+        "productName": "Ориз Баланс",
+        "description": "KRINA, 2 бр. х 800 г",
+        "promoPrice": 2.54,
+        "regularPrice": 5.08,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN005",
+        "productName": "Елда бланширана",
+        "description": "DR. KESKIN, 2 бр. х 500 г",
+        "promoPrice": 2.8,
+        "regularPrice": 5.6,
+        "discountPercentage": 50,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN006",
+        "productName": "Маслиново масло Екстра Върджин",
+        "description": "MINERVA, 750 мл",
+        "promoPrice": 9.89,
+        "regularPrice": 13.01,
+        "discountPercentage": 24,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN007",
+        "productName": "Маслиново масло Екстра Върджин",
+        "description": "GARCIA DE LA CRUZ, 1 л",
+        "promoPrice": 8.99,
+        "regularPrice": 12.15,
+        "discountPercentage": 26,
+        "validFrom": "12.03.2026",
+        "validTo": "18.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    },
+    {
+        "productId": "OSN008",
+        "productName": "Захар кристал",
+        "description": "МИТЕКС, 1 кг",
+        "promoPrice": 0.58,
+        "regularPrice": 0.94,
+        "discountPercentage": 38,
+        "validFrom": "13.03.2026",
+        "validTo": "15.03.2026",
+        "loyaltyCard": false,
+        "notes": ""
+    }
+]
