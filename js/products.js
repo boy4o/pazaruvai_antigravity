@@ -1,9 +1,37 @@
 /**
  * Pazaruvai.info — Products Engine
  * Adapted for real data format: data/{store}/{category-slug}.json
- * Fields: productId, productName, description, promoPrice, regularPrice,
- *         discountPercentage, validFrom, validTo, loyaltyCard (bool), notes
  */
+
+/* ── Product Image Mapping ─────────────────────────── */
+const PRODUCT_IMAGES = {};
+const IMG_CACHE = {};
+
+/**
+ * Get a product image URL. Uses a free image proxy based on product name.
+ * Falls back to category emoji placeholder.
+ */
+function getProductImageUrl(productName, category) {
+    const key = productName.toLowerCase().trim();
+    if (IMG_CACHE[key]) return IMG_CACHE[key];
+
+    // Build a search-friendly query for the product
+    const searchTerm = encodeURIComponent(productName + ' продукт');
+    // Use DummyImage as reliable fallback with product initials
+    const initials = productName.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+
+    // Use a placeholder service that generates nice product-style images
+    // We'll use placehold.co with dynamic text
+    const url = `https://placehold.co/300x200/f5f7fa/1a1a2e?font=roboto&text=${encodeURIComponent(productName.substring(0, 20))}`;
+    IMG_CACHE[key] = url;
+    return url;
+}
+
+/* Category-specific fallback images using emoji */
+function getCategoryFallbackEmoji(category) {
+    const cat = getCategoryById(category);
+    return cat ? cat.icon : '📦';
+}
 
 /* ── Fetch Products for a Category ──────────────────── */
 async function fetchCategoryProducts(categoryId) {
@@ -39,7 +67,6 @@ async function fetchAllProducts() {
 /* ── Fetch Top Deals (products with biggest discounts) ── */
 async function fetchTopDeals() {
     const base = getBasePath();
-    const allProducts = [];
     const promises = [];
     for (const cat of CATEGORIES) {
         for (const store of STORE_IDS) {
@@ -53,7 +80,6 @@ async function fetchTopDeals() {
     }
     const results = await Promise.all(promises);
     const all = results.flat();
-    // Return products with discounts, sorted by biggest discount
     return all.filter(p => p.discountPct && p.discountPct > 0)
               .sort((a, b) => b.discountPct - a.discountPct)
               .slice(0, 16);
@@ -61,9 +87,7 @@ async function fetchTopDeals() {
 
 /* ── Normalize product from real JSON format ────────── */
 function normalizeProduct(raw, store, categoryId) {
-    // Parse quantity and unit from description
     const parsed = parseDescription(raw.description || '');
-
     return {
         id: `${store}-${categoryId}-${raw.productId}`,
         name: raw.productName || '',
@@ -90,7 +114,6 @@ function parseDescription(desc) {
     if (!desc) return {};
     const result = {};
 
-    // Try to extract quantity patterns like "1 кг", "500 г", "1 л", "250 мл", etc.
     const qtyMatch = desc.match(/(\d+(?:[.,]\d+)?)\s*(кг|г|гр|л|мл|бр|x\s*\d+)/i);
     if (qtyMatch) {
         result.quantity = parseFloat(qtyMatch[1].replace(',', '.'));
@@ -103,11 +126,8 @@ function parseDescription(desc) {
         else result.unit = 'pcs';
     }
 
-    // Try to extract brand (first part of description before comma)
     const parts = desc.split(',').map(s => s.trim());
     if (parts.length > 1) {
-        // The brand may be the second part if first is quantity
-        // or first part if it's a name
         if (parts[0].match(/^\d/)) {
             result.brand = parts.length > 1 ? parts[1] : '';
         } else {
@@ -170,17 +190,15 @@ function groupProducts(products) {
         });
     });
 
-    // Calculate aggregates per group
     Object.values(groups).forEach(g => {
         const prices = g.offers.map(o => o.priceEUR).filter(p => p != null);
         g.bestPrice = prices.length ? Math.min(...prices) : 0;
+        g.worstPrice = prices.length ? Math.max(...prices) : 0;
         g.bestStore = g.offers.find(o => o.priceEUR === g.bestPrice)?.store;
         g.maxDiscount = Math.max(...g.offers.map(o => o.discountPct || 0));
         const normPrices = g.offers.map(o => o.normalizedPriceEUR).filter(p => p != null && !isNaN(p));
         g.normalizedBestPrice = normPrices.length ? Math.min(...normPrices) : g.bestPrice;
-        // Mark best offer
         g.offers.forEach(o => { o.isBest = o.priceEUR === g.bestPrice && g.offers.length > 1; });
-        // Sort offers by price
         g.offers.sort((a, b) => (a.priceEUR || 0) - (b.priceEUR || 0));
     });
 
@@ -223,7 +241,9 @@ function renderProductCard(group, currency) {
     const bestBadge = group.offers.length > 1
         ? `<div class="badge-best">⭐ Топ цена</div>` : '';
 
-    const imgHtml = `<div class="placeholder-img">${catIcon}</div>`;
+    // Product image — use placehold.co with product name
+    const imgUrl = getProductImageUrl(group.name, group.category);
+    const imgHtml = `<img src="${imgUrl}" alt="${group.name}" loading="lazy" onerror="this.outerHTML='<div class=\\'placeholder-img\\'>${catIcon}</div>'">`;
 
     // Offers rows
     const offersHtml = group.offers.map(o => {
@@ -254,6 +274,11 @@ function renderProductCard(group, currency) {
     const normPrice = group.normalizedBestPrice && !isNaN(group.normalizedBestPrice)
         ? formatPrice(group.normalizedBestPrice, currency) : '';
 
+    // Compare button (only if multiple offers)
+    const compareBtn = group.offers.length > 1
+        ? `<button class="btn-compare" onclick='openCompare(${JSON.stringify(group.matchKey).replace(/'/g, "\\'")})'> 📊 Сравни</button>`
+        : '';
+
     // Details
     const uid = 'det-' + Math.random().toString(36).substr(2, 9);
     const validityHtml = group.offers.map(o => {
@@ -274,9 +299,12 @@ function renderProductCard(group, currency) {
       <div class="offers-list">${offersHtml}</div>
       <div class="product-footer">
         <div class="normalized-price">${normPrice ? `Норм: <strong>${normPrice}${normLabel}</strong>` : ''}</div>
-        <button class="details-toggle" onclick="toggleDetails('${uid}', this)">
-          Детайли <span class="arrow">▼</span>
-        </button>
+        <div style="display:flex;gap:6px;align-items:center">
+          ${compareBtn}
+          <button class="details-toggle" onclick="toggleDetails('${uid}', this)">
+            Детайли <span class="arrow">▼</span>
+          </button>
+        </div>
       </div>
       <div class="details-content" id="${uid}">
         <div class="details-inner">
@@ -293,8 +321,106 @@ function toggleDetails(id, btn) {
     if (el) { el.classList.toggle('open'); btn.classList.toggle('open'); }
 }
 
+/* ═══════════════════════════════════════════════════════
+   COMPARISON MODAL
+   ═══════════════════════════════════════════════════════ */
+
+// Store all rendered groups globally for comparison access
+let _allRenderedGroups = [];
+
+function openCompare(matchKey) {
+    const group = _allRenderedGroups.find(g => g.matchKey === matchKey);
+    if (!group || group.offers.length < 2) return;
+
+    const currency = (typeof currentCurrency !== 'undefined') ? currentCurrency : 'EUR';
+    const bestPrice = group.bestPrice;
+    const worstPrice = group.worstPrice;
+    const savings = worstPrice - bestPrice;
+
+    const rows = group.offers.map(o => {
+        const st = STORES[o.store] || {};
+        const isBest = o.priceEUR === bestPrice ? ' class="best-row"' : '';
+        const priceStr = formatPrice(o.priceEUR, currency);
+        const oldStr = o.oldPriceEUR ? `<span class="old-price">${formatPrice(o.oldPriceEUR, currency)}</span>` : '';
+        const discStr = o.discountPct ? `<span class="discount-badge">-${o.discountPct}%</span>` : '';
+        const normPrice = o.normalizedPriceEUR && !isNaN(o.normalizedPriceEUR)
+            ? formatPrice(o.normalizedPriceEUR, currency) : '—';
+        const loyaltyStr = o.loyaltyCard ? `<br><span class="loyalty-badge">${o.loyaltyCard}</span>` : '';
+        const validStr = o.validFrom ? `${o.validFrom} — ${o.validTo}` : '—';
+        const diff = o.priceEUR - bestPrice;
+        const diffStr = diff > 0 ? `+${formatPrice(diff, currency)}` : (o.isBest ? '✅ Най-ниска' : '—');
+
+        return `<tr${isBest}>
+            <td><div class="store-cell"><span class="store-dot" style="background:${st.color}"></span>${st.name}</div></td>
+            <td class="price-cell">${oldStr}${priceStr}${discStr}${loyaltyStr}</td>
+            <td>${normPrice}${unitLabel(group.unit)}</td>
+            <td>${diffStr}</td>
+            <td style="font-size:.78rem;color:var(--c-text-muted)">${validStr}</td>
+        </tr>`;
+    }).join('');
+
+    const savingsHtml = savings > 0 ? `
+        <div class="compare-savings">
+            💰 Спестяваш до <strong>${formatPrice(savings, currency)}</strong> 
+            (${((savings / worstPrice) * 100).toFixed(0)}%) като купуваш от 
+            <strong>${STORES[group.bestStore]?.name || group.bestStore}</strong> 
+            вместо от най-скъпата оферта.
+        </div>` : '';
+
+    const modal = document.createElement('div');
+    modal.className = 'compare-overlay';
+    modal.id = 'compareModal';
+    modal.innerHTML = `
+        <div class="compare-modal">
+            <div class="compare-header">
+                <h3>📊 Сравнение на цени</h3>
+                <button class="compare-close" onclick="closeCompare()">✕</button>
+            </div>
+            <div class="compare-body">
+                <div class="compare-product-title">${group.name}</div>
+                <div class="compare-product-desc">${group.description}</div>
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Магазин</th>
+                            <th>Цена</th>
+                            <th>Норм. цена</th>
+                            <th>Разлика</th>
+                            <th>Валидност</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+                ${savingsHtml}
+            </div>
+        </div>`;
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+
+    // Close on overlay click
+    modal.addEventListener('click', e => {
+        if (e.target === modal) closeCompare();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function handler(e) {
+        if (e.key === 'Escape') { closeCompare(); document.removeEventListener('keydown', handler); }
+    });
+}
+
+function closeCompare() {
+    const modal = document.getElementById('compareModal');
+    if (modal) {
+        modal.remove();
+        document.body.style.overflow = '';
+    }
+}
+
 /* ── Render Products Grid ───────────────────────────── */
 function renderProductsGrid(container, groups, currency, view) {
+    // Store groups globally for comparison access
+    _allRenderedGroups = groups;
+
     if (!groups || groups.length === 0) {
         container.innerHTML = `
         <div class="empty-state">
@@ -318,7 +444,6 @@ function showLoading(container) {
 /* ── Count all products for stats ───────────────────── */
 async function countAllProducts() {
     const base = getBasePath();
-    let total = 0;
     const byCat = {};
     const byStore = {};
     const promises = [];
@@ -334,6 +459,7 @@ async function countAllProducts() {
         }
     }
     const results = await Promise.all(promises);
+    let total = 0;
     results.forEach(r => {
         total += r.count;
         byCat[r.catId] = (byCat[r.catId] || 0) + r.count;
